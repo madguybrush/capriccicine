@@ -494,8 +494,8 @@ padding: 0;
 .container{
 	flex-direction: column;
 	height: 100%;
-	padding-left: 0;
-	padding-right: 0;
+	/*padding-left: 0;
+	padding-right: 0;*/
 
 }
 

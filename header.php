@@ -184,7 +184,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <nav class="navbar fixed-top navbar-expand-md navbar-dark menudesktop animated fadeInLeft  <?php if (  !is_front_page() ) { echo "fondnoir"; } ?>">
 
 
-			<div class="container">
+			<div class="container" style="padding-left: 0; padding-right: 0;">
 		
 					<!-- Your site title as branding in the menu -->
 				<div id="menuHaut" >
@@ -241,7 +241,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				
                 </div>
                 
-				<div id="menuBas" class="row animated fadeInLeft" >
+				<div id="menuBas" class="row animated fadeInUp" >
 				
 				
 					<div class="searchform" style="width: 100%; padding-left: 15px; padding-right: 15px;">
