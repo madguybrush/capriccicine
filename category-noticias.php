@@ -74,39 +74,10 @@ $taxslug = $taxonomie->slug;
                             
                                 );*/
 
-                                 $args = array( 
-                                'posts_per_page' => -1,
-                                'post_type'    => 'post', 
-                                'category_name' => 'noticias'
-                            ); 
-
-
-
-              $j = 0; // counter
-          
-    
-           $ProjetsQuery = new WP_Query($args ); 
-         
-           if ( $ProjetsQuery->have_posts() ) : 
-                 while ( $ProjetsQuery->have_posts() ) : 
-                     $ProjetsQuery->the_post(); 
-                   
-                     $date = get_field('date_de_sortie');
-                     $datestamp = strtotime($date);
-                      $now = time(); 
-                     //$timestamp = strtotime($date);
-                    //  $dateformatannee = "Y";
-                   //   $annee = date_i18n($dateformatannee, $timestamp);
-                      if ((!$date) || ($now < $datestamp)) { $j++; }
-                      //if (!$date)  { $j++; }
-                endwhile; 
-
-            else : echo "";
-            
-            endif;
-
+             
    
-        if ($j > 0){ // si il y a au moins un film dont la date de sortie n'est pas définie ou supérieure à la date actuelle
+   
+        //if ($j > 0){ // si il y a au moins un film dont la date de sortie n'est pas définie ou supérieure à la date actuelle
                     ?>
     
                       <div class="container-fluid padding10 content animated <?php //echo $j; ?>">
@@ -131,17 +102,38 @@ $taxslug = $taxonomie->slug;
                                            $x = 0;
 
 
+
+
+
+
+                    $args = array( 
+                                'posts_per_page' => 2, // -1
+                                //'max_num_pages' => 3,
+                                'post_type'    => 'post', 
+                                'category_name' => 'noticias'
+                            ); 
+$args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+$ProjetsQuery = new WP_Query($args ); 
+
+// Pagination fix
+$temp_query = $wp_query;
+$wp_query   = NULL;
+$wp_query   = $ProjetsQuery;
+    
+           
+
+
                                       if ( $ProjetsQuery->have_posts() ) : 
                                           while ( $ProjetsQuery->have_posts() ) : 
                                              $ProjetsQuery->the_post(); 
 
 
-                                               $date = get_field('date_de_sortie'); 
+                                             /*  $date = get_field('date_de_sortie'); 
                                                $datestamp = strtotime($date);
-                                               //$now = getdate();
+                                              
                                               $now = time();
-                                              //print_r($now);
-                                              //print_r($datestamp);
+                                     
 
                                               $timestamp = strtotime($date);
                                                                             
@@ -152,31 +144,36 @@ $taxslug = $taxonomie->slug;
                                               $annee = date_i18n($dateformatannee, $timestamp);
                                               $jour =  date_i18n($dateformatjour, $timestamp);
                                               $mois =  date_i18n($dateformatmois, $timestamp);
-                                              $mois2 =  date_i18n($dateformatmois2, $timestamp);
-
-
-                                             // if (($date) && ($now >= $datestamp)){
+                                              $mois2 =  date_i18n($dateformatmois2, $timestamp);*/
 
 
 
                                                   $ProduitsArray[$x]['titre'] = trim(get_the_title()); // title
 
 
-                                                   if ($date){
+                                                  /* if ($date){
                                                        $ProduitsArray[$x]['dateok'] =  $date; 
-                                                      $ProduitsArray[$x]['date'] = $mois2 . $jour;   // date
+                                                      $ProduitsArray[$x]['date'] = $mois2 . $jour;  
                                                       $ProduitsArray[$x]['mois'] = date_i18n($dateformatmois, $timestamp);
                                                      $ProduitsArray[$x]['jour'] = date_i18n($dateformatjour, $timestamp);
                                                      $ProduitsArray[$x]['annee'] = date_i18n($dateformatannee, $timestamp);
                                                 } else {
                                                    $ProduitsArray[$x]['dateok'] = null;
                                                     $ProduitsArray[$x]['date'] = null;
-                                                }
+                                                }*/
+
+
+                                                $ProduitsArray[$x]['datepub'] = get_the_date();
 
                                                   //$ProduitsArray[$x]['affiche'] =  get_field('affiche_du_film');
                                                  $ProduitsArray[$x]['affiche'] = get_the_post_thumbnail_url();
 
-                                                 if(trim(get_field('auteurliste'))){
+
+                                                 $ProduitsArray[$x]['cartelera'] = trim(get_field('cartelera'));
+
+                                                  $ProduitsArray[$x]['lien'] = get_permalink();
+
+                                                /* if(trim(get_field('auteurliste'))){
                                                   $ProduitsArray[$x]['auteur'] = trim(get_field('auteurliste'));
                                                     } else {
                                                         $ProduitsArray[$x]['auteur'] = trim(get_field('auteur'));
@@ -184,38 +181,19 @@ $taxslug = $taxonomie->slug;
 
                                                  $ProduitsArray[$x]['categorie'] = get_field('categorie');
 
-                                                 $ProduitsArray[$x]['lien'] = get_permalink();
+                                                
 
-                                                  $x++;
+                                                  $x++;*/
 
 
 
                                             //  }
 
+                                                  ?>
 
 
 
-                                                    endwhile; ?>
-                          
-                                     <?php else : ?>
-                                  
-                                  pas de produit
-                          
-                         <?php 
-
-                       endif; 
-                       ?>
-    <?php wp_reset_query(); ?>
-
-
-<?php
-
-   usort($ProduitsArray, 'compare_date');
-
-for($y = 0; $y < count($ProduitsArray); $y++) {
-
-
- ?> <div class="grid-item text-center">
+<div class="grid-item text-center">
 
                                                              
              <div class="container">
@@ -224,30 +202,29 @@ for($y = 0; $y < count($ProduitsArray); $y++) {
 
 
             <div class="col-12 colimg">
-              <a href="<?php echo $ProduitsArray[$y]['lien']; ?>" alt="<?php echo $ProduitsArray[$y]['titre']; ?>">
-                    <?php if( $ProduitsArray[$y]['affiche'] ): ?>
-                            <img src="<?php echo $ProduitsArray[$y]['affiche'] ?>" alt="<?php echo $ProduitsArray[$y]['titre']; ?>">
+              <a href="<?php echo $ProduitsArray[$x]['lien']; ?>" alt="<?php echo $ProduitsArray[$x]['titre']; ?>">
+                    <?php if( $ProduitsArray[$x]['affiche'] ): ?>
+                            <img src="<?php echo $ProduitsArray[$x]['affiche'] ?>" alt="<?php echo $ProduitsArray[$x]['titre']; ?>">
                      <?php else : // image par défaut ?>
-                            <img src="<?php bloginfo('stylesheet_directory');?>/img/film4.png" alt="<?php echo $ProduitsArray[$y]['titre']; ?>" style="width:100%;height:160px">
+                            <img src="<?php bloginfo('stylesheet_directory');?>/img/film4.png" alt="<?php echo $ProduitsArray[$x]['titre']; ?>" style="width:100%;height:160px">
                       <?php endif; ?>
               </a>
            </div>
 
                                                             <div class="col-12">  
-                                                              <h3 class="titre"><?php echo $ProduitsArray[$y]['titre']; ?></h3>
-                                                              <h4><span class="auteur"><?php echo $ProduitsArray[$y]['auteur'];   ?></span></h4>
-                                                            
+                                                              <h3 class="titre" style="color:<?php if (!$ProduitsArray[$x]['cartelera']) { echo '#000'; } ?>"><?php echo $ProduitsArray[$x]['titre']; ?></h3>
+                                                              <h4><span class="auteur"><?php //echo $ProduitsArray[$x]['auteur'];   ?></span></h4>
+                                                              <h5 style="opacity: .8;"><?php echo $ProduitsArray[$x]['datepub'];  ?></h5>
                                                               <?php 
-                                                                $dateok = $ProduitsArray[$y]['dateok'];
-                                                              if (isset($dateok)){ ?>
-                                                              <h5>sortie le <?php echo (float)$ProduitsArray[$y]['jour']. ' ' . $ProduitsArray[$y]['mois'] . ' ' . $ProduitsArray[$y]['annee']; ?></h5>
-                                                              <?php } ?>
-                                                              <h5><span class="categorie <?php if ($ProduitsArray[$y]['categorie'] === "film d'actualité" ){ echo "d-none"; } ?>"><?php echo $ProduitsArray[$y]['categorie']; ?></span></h5>
+                                                               // $dateok = $ProduitsArray[$y]['dateok'];
+                                                             // if (isset($dateok)){ ?>
+                                                              <!--<h5>sortie le --><?php //echo (float)$ProduitsArray[$y]['jour']. ' ' . $ProduitsArray[$y]['mois'] . ' ' . $ProduitsArray[$y]['annee']; ?><!--</h5>-->
+                                                              <?php //} ?>
+
+
+                                                              <h5><span class="categorie <?php //if ($ProduitsArray[$x]['categorie'] === "film d'actualité" ){ echo "d-none"; } ?>"><?php //echo $ProduitsArray[$x]['categorie']; ?></span></h5>
                                                             </div>  
-<?php
 
-
-    ?>
         </div>
           </div>
                                                         
@@ -257,18 +234,75 @@ for($y = 0; $y < count($ProduitsArray); $y++) {
 
 
 
+
+
+                                                <?php    endwhile; ?>
+                          
+                                   
+                                                  
+                          
+                         <?php 
+                         //the_posts_pagination();
+                         //paginate_links();
+
+                       endif;  
+                       //understrap_pagination();
+                       //the_posts_navigation();
+                       
+                
+                       ?>
+
+
+
+
+    <?php //wp_reset_query(); ?>
+
+
+<?php
+
+   //usort($ProduitsArray, 'compare_date');
+
+//for($y = 0; $y < count($ProduitsArray); $y++) {
+
+
+ ?> 
+
+
+
                        <?php
 
-} // end for
+//} // end for
 ?>
 
                   </div> <!-- grid gridcatalogue -->
-        
+        <?php 
+
+       // Reset postdata
+wp_reset_postdata();
+
+// Custom query loop pagination
+//previous_posts_link( 'Older Posts' );
+//paginate_links();
+//next_posts_link( 'Newer Posts', $ProjetsQuery->max_num_pages );
+the_posts_pagination(array(
+            'mid_size' => 1,
+            'screen_reader_text' => ' ',
+            'prev_text' => __('<', 'patelextensions'),
+            'next_text' => __('>', 'patelextensions'),
+            //'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'patelextensions') . ' </span>',
+        ));
+
+// Reset main query object
+$wp_query = NULL;
+$wp_query = $temp_query;
+
+
+        //the_posts_pagination();?>
         
        </div> <!-- container-fluid -->
 
 <?php
-} //end if j >0 ?
+//} //end if j >0 ?
 
 ?>
 

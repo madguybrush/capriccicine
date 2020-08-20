@@ -127,7 +127,9 @@ html, body{
 }
 
 
-
+.pagination{
+	justify-content: center;
+}
 
 @font-face {
 font-family: Piek;
