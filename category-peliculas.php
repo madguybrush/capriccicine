@@ -117,7 +117,7 @@ $taxslug = $taxonomie->slug;
                           <div class="row films">
             
                             <div class="col-md-12">
-                                <h2> PROCHAINEMENT  </h2>
+                                <h2> PRÓXIMAMENTE  </h2>
                             </div>
                         
                           </div>

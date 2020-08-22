@@ -139,7 +139,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 				<div class="col-12">
-				 <a href="#" class="voirenboutique" title="Voir en boutique"><button class=" cta ctapopup">Voir en boutique</button></a>
+					<?php
+					$btns = get_field('btns');	
+					if ($btns) {
+						$vod = $btns['btn_vod']; 
+						$cartelera = $btns['btn_cartelera']; 
+						$dvd = $btns['btn_dvd']; 
+					}
+
+					if ($vod) { ?>
+						 <a href="<?php echo $vod; ?>" target="_blank" class="" title="Ver en VOD">
+						 	<button class="cta ctapopup">Ver en VOD</button>
+						 </a>
+					 <?php } ?>
+
+					 <?php if ($cartelera) { ?>
+						 <a href="<?php echo $cartelera; ?>" target="_blank" class="" title="Cartelera">
+						 	<button class="cta ctapopup">Cartelera</button>
+						 </a>
+					 <?php } ?>
+
+					<?php if ($dvd) { ?>
+						 <a href="<?php echo $dvd; ?>" target="_blank" class="" title="dvd">
+						 	<button class="cta ctapopup">EN DVD</button>
+						 </a>
+					 <?php } ?>
+
 				</div>
 
 				
@@ -192,16 +217,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php } ?>
 
 
-						<table class="tableFilm">
+					<table class="tableFilm">
 						<tbody>
 
+														
 
 
 						<?php //$pays_dorigine = get_field('pays_dorigine');
 						$annee_de_production = get_field('annee_de_production');
                                     if ($annee_de_production){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Année de production</b></td>
+								<td class="colLeft"><b>Año de producción</b></td>
 								<td class="colRight"><?php echo $annee_de_production; ?></td>
 							</tr>
                             <?php } ?>
@@ -225,7 +251,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php $pays_dorigine = get_field('pays_dorigine');	
                                     if ($pays_dorigine){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Pays</b></td>
+								<td class="colLeft"><b>País</b></td>
 								<td class="colRight"><?php echo get_field('pays_dorigine'); ?></td>
 							</tr>
                             <?php } ?>
@@ -233,7 +259,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                                         <?php $langue = get_field('langue');	
                                     if ($langue){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Langue</b></td>
+								<td class="colLeft"><b>Idioma</b></td>
 								<td class="colRight"><?php echo get_field('langue'); ?></td>
 							</tr>
                             <?php } ?>
@@ -241,7 +267,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php $duree = get_field('duree');	
                                     if ($duree){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Durée</b></td>
+								<td class="colLeft"><b>Duración</b></td>
 								<td class="colRight"><?php echo get_field('duree'); ?></td>
 							</tr>
                             <?php } ?>
@@ -259,7 +285,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <?php $titre = get_field('titre_original');	
                                     if ($titre){?>
 							<tr class="titre">
-								<td class="colLeft"><b>Titre original </b></td>
+								<td class="colLeft"><b>Título original </b></td>
 								<td class="colRight"><?php echo $titre; ?></td>
 							</tr>
                             <?php } ?>
@@ -311,7 +337,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Réalisation</b></td>
+										<td class="colLeft"><b>Director</b></td>
 										<td class="colRight"><?php echo $technique['realisation']; ?></td>
 									</tr>
 
@@ -322,7 +348,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Scénario</b></td>
+										<td class="colLeft"><b>Guionista</b></td>
 										<td class="colRight"><?php echo $technique['scenario']; ?></td>
 									</tr>
 
@@ -332,7 +358,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Photographie</b></td>
+										<td class="colLeft"><b>Director de fotografía</b></td>
 										<td class="colRight"><?php echo $technique['photographie']; ?></td>
 									</tr>
 
@@ -392,7 +418,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Montage image</b></td>
+										<td class="colLeft"><b>Montador </b></td>
 										<td class="colRight"><?php echo $technique['montage_image']; ?></td>
 									</tr>
 
@@ -413,7 +439,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Musique</b></td>
+										<td class="colLeft"><b>Música</b></td>
 										<td class="colRight"><?php echo $technique['musique']; ?></td>
 									</tr>
 
@@ -446,7 +472,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Producteur</b></td>
+										<td class="colLeft"><b>Producción</b></td>
 										<td class="colRight"><?php echo $technique['producteur']; ?></td>
 									</tr>
 
@@ -468,7 +494,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Coproduction</b></td>
+										<td class="colLeft"><b>Coproducción</b></td>
 										<td class="colRight"><?php echo $technique['coproduction']; ?></td>
 									</tr>
 
@@ -491,7 +517,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Avec la participation de</b></td>
+										<td class="colLeft"><b>Con la participación de</b></td>
 										<td class="colRight"><?php echo $technique['avec_la_participation_de']; ?></td>
 									</tr>
 
@@ -549,7 +575,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Distribution</b></td>
+										<td class="colLeft"><b>Distribución</b></td>
 										<td class="colRight"><?php echo $technique['distribution']; ?></td>
 									</tr>
 
@@ -745,7 +771,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<div class="row">
 
-							<?php 
+								<?php 
 
 
 							$ba = $telechargements['bande-annonce']; 
@@ -762,19 +788,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 							$dcp = $ba['dcp'];
 							
 
+/*
+ok TRÁILER EN DCP
+ok TRÁILER EN MP4
+ok PÓSTER HD
+ok FOTOGRAMAS HD
+ok DOSSIER DE PRENSA
+ok CLIPPING DE PRENSA 
+ok EXTRACTOS 
+GUÍA DE DISTRIBUCIÓN
+CALIFICACIÓN POR EDADES
+*/
 
 							?>
                             <?php if( $hd || $dcp /*get_field('bande-annonce')*/ ){?>
 								<div class="col-6 col-md-4 col-lg-12">
 	                                <?php //the_field('bande-annonce'); ?>
 	                               <!-- <a href="#" alt="">-->
-	                                	<button class="download opensubmenuba">BANDE-ANNONCE</button>
+	                                	<button class="download opensubmenuba">TRÁILER</button>
 	                              <!--  </a>-->
 	                                <div class="submenuba animated fadeIn">
 	                                	<?php //print_r($hd);
 	                                		if ($hd){
 	                                	?>
-	                                	<a href="<?php echo $hd; //echo $srchd; ?>" target="blank">HD</a><br />
+	                                	<a href="<?php echo $hd; //echo $srchd; ?>" target="blank">MP4</a><br />
 	                                	<?php 		} // endif $hd
 	                                	 
 	                                	if ($dcp){
@@ -788,20 +825,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                              <?php if( $affiche /*get_field('affiche_hd')*/ ){?>
 							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $affiche; //the_field('affiche_hd'); ?>" alt="" download><button class="download">AFFICHE HD</button></a>
+								 <a href="<?php echo $affiche; //the_field('affiche_hd'); ?>" alt="" download><button class="download">PÓSTER HD</button></a>
 							</div>
                             <?php } ?>
 
                              <?php if( $dp ){?>
 							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $dp; ?>" alt="" download><button class="download">DOSSIER DE PRESSE</button></a>
+								 <a href="<?php echo $dp; ?>" alt="" download><button class="download">DOSSIER DE PRENSA</button></a>
 							</div>
                             <?php } ?>  
                             
 
                              <?php if( $revue ){?>
 							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $revue; ?>" alt="" download><button class="download">REVUE DE PRESSE</button></a>
+								 <a href="<?php echo $revue; ?>" alt="" download><button class="download">CLIPPING DE PRENSA</button></a>
 							</div>
                             <?php } ?>  
                             
@@ -810,7 +847,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                              <?php if( $photos ){?>
 
 								<div class="col-6 col-md-4 col-lg-12">
-									 <a href="<?php echo $photos; ?>" alt="" download><button class="download">PHOTOS HD</button></a>
+									 <a href="<?php echo $photos; ?>" alt="" download><button class="download">FOTOGRAMAS HD</button></a>
 								</div>
 
 							<!--<div class="col-6 col-md-4 col-lg-12">
@@ -833,7 +870,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                              <?php //if( have_rows('photos_hd') ): ?>
 							<div class="col-6 col-md-4 col-lg-12">
 								<!-- <a href="#" alt="">-->
-								 	<button class="download opensubmenuextraits">EXTRAITS</button>
+								 	<button class="download opensubmenuextraits">EXTRACTOS</button>
 								<!-- </a>-->
 							
 									<div class="submenuextraits animated fadeIn">
@@ -865,12 +902,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
                             <?php if( $touslesdocuments ){?>
-								<div class="col-6 col-md-4 col-lg-12">
-									 <a href="<?php echo $touslesdocuments; ?>" alt="" download><button class="downloadall">TOUS LES DOCUMENTS</button></a>
-								</div>
+							<div class="col-6 col-md-4 col-lg-12">
+								 <a href="<?php echo $touslesdocuments; ?>" alt="" download><button class="downloadall">TOUS LES DOCUMENTS</button></a>
+							</div>
                             <?php } ?>
 
-                           
+
+
 
 						</div>
 

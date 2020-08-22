@@ -27,7 +27,7 @@ get_header();
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'page-qui' ); ?>
+					<?php get_template_part( 'loop-templates/content', 'page-nosotros' ); ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
@@ -40,9 +40,9 @@ get_header();
 
 
 		<!-- Do the right sidebar check -->
-		<?php if ( !is_cart() && !is_front_page()) : ?>
+		<?php //if ( !is_cart() && !is_front_page()) : ?>
             <?php //get_template_part( 'global-templates/right-sidebar-check' ); ?>
-<?php endif; ?>
+<?php //endif; ?>
             
 
 

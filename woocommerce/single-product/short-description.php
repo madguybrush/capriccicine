@@ -404,7 +404,7 @@ endif;
 							$variation_max_price = $product->get_variation_price('max');
 							if ($variation_max_price) : ?>
 								<tr class="acteurs">
-									<td valign="top" class="colLeft"><b>Prix</b></td>
+									<td valign="top" class="colLeft"><b>Precio</b></td>
 									<td class="colRight" style="color :#A78A3C; font-family: Lora; font-weight: bold;">
 										<?php echo $variation_max_price; ?>€
 									</td>
@@ -421,7 +421,7 @@ endif;
 						$annee_de_production = get_field('annee_de_production');
                                     if ($annee_de_production){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Année de production</b></td>
+								<td class="colLeft"><b>Año de producción</b></td>
 								<td class="colRight"><?php echo $annee_de_production; ?></td>
 							</tr>
                             <?php } ?>
@@ -445,7 +445,7 @@ endif;
 						<?php $pays_dorigine = get_field('pays_dorigine');	
                                     if ($pays_dorigine){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Pays</b></td>
+								<td class="colLeft"><b>País</b></td>
 								<td class="colRight"><?php echo get_field('pays_dorigine'); ?></td>
 							</tr>
                             <?php } ?>
@@ -453,7 +453,7 @@ endif;
                                                         <?php $langue = get_field('langue');	
                                     if ($langue){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Langue</b></td>
+								<td class="colLeft"><b>Idioma</b></td>
 								<td class="colRight"><?php echo get_field('langue'); ?></td>
 							</tr>
                             <?php } ?>
@@ -461,7 +461,7 @@ endif;
 						<?php $duree = get_field('duree');	
                                     if ($duree){?>
 							<tr > <!-- class="titre" -->
-								<td class="colLeft"><b>Durée</b></td>
+								<td class="colLeft"><b>Duración</b></td>
 								<td class="colRight"><?php echo get_field('duree'); ?></td>
 							</tr>
                             <?php } ?>
@@ -479,7 +479,7 @@ endif;
                             <?php $titre = get_field('titre_original');	
                                     if ($titre){?>
 							<tr class="titre">
-								<td class="colLeft"><b>Titre original </b></td>
+								<td class="colLeft"><b>Título original </b></td>
 								<td class="colRight"><?php echo $titre; ?></td>
 							</tr>
                             <?php } ?>
@@ -531,7 +531,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Réalisation</b></td>
+										<td class="colLeft"><b>Director</b></td>
 										<td class="colRight"><?php echo $technique['realisation']; ?></td>
 									</tr>
 
@@ -542,7 +542,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Scénario</b></td>
+										<td class="colLeft"><b>Guionista</b></td>
 										<td class="colRight"><?php echo $technique['scenario']; ?></td>
 									</tr>
 
@@ -552,7 +552,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Photographie</b></td>
+										<td class="colLeft"><b>Director de fotografía</b></td>
 										<td class="colRight"><?php echo $technique['photographie']; ?></td>
 									</tr>
 
@@ -612,7 +612,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Montage image</b></td>
+										<td class="colLeft"><b>Montador </b></td>
 										<td class="colRight"><?php echo $technique['montage_image']; ?></td>
 									</tr>
 
@@ -633,7 +633,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Musique</b></td>
+										<td class="colLeft"><b>Música</b></td>
 										<td class="colRight"><?php echo $technique['musique']; ?></td>
 									</tr>
 
@@ -666,7 +666,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Producteur</b></td>
+										<td class="colLeft"><b>Producción</b></td>
 										<td class="colRight"><?php echo $technique['producteur']; ?></td>
 									</tr>
 
@@ -688,7 +688,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Coproduction</b></td>
+										<td class="colLeft"><b>Coproducción</b></td>
 										<td class="colRight"><?php echo $technique['coproduction']; ?></td>
 									</tr>
 
@@ -711,7 +711,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Avec la participation de</b></td>
+										<td class="colLeft"><b>Con la participación de</b></td>
 										<td class="colRight"><?php echo $technique['avec_la_participation_de']; ?></td>
 									</tr>
 
@@ -769,7 +769,7 @@ endif;
 		                            ?>
 
 		                            <tr>
-										<td class="colLeft"><b>Distribution</b></td>
+										<td class="colLeft"><b>Distribución</b></td>
 										<td class="colRight"><?php echo $technique['distribution']; ?></td>
 									</tr>
 
@@ -976,7 +976,7 @@ endif;
 
 						<?php if (get_field('lauteur')){ ?>
 							<div class="col-lg-12 lauteur">
-								<h3>L’AUTEUR </h3>
+								<h3>EL DIRECTOR </h3>
 								<img src="<?php bloginfo('stylesheet_directory');?>/img/trait-debut-paragraphe.svg" alt="" class="trait">
                                 <?php echo get_field('lauteur', false, false);  ?>
 
@@ -1106,19 +1106,30 @@ if (( $video ) || ( $images )) {
 							$dcp = $ba['dcp'];
 							
 
+/*
+ok TRÁILER EN DCP
+ok TRÁILER EN MP4
+ok PÓSTER HD
+ok FOTOGRAMAS HD
+ok DOSSIER DE PRENSA
+ok CLIPPING DE PRENSA 
+ok EXTRACTOS 
+GUÍA DE DISTRIBUCIÓN
+CALIFICACIÓN POR EDADES
+*/
 
 							?>
                             <?php if( $hd || $dcp /*get_field('bande-annonce')*/ ){?>
 								<div class="col-6 col-md-4 col-lg-12">
 	                                <?php //the_field('bande-annonce'); ?>
 	                               <!-- <a href="#" alt="">-->
-	                                	<button class="download opensubmenuba">BANDE-ANNONCE</button>
+	                                	<button class="download opensubmenuba">TRÁILER</button>
 	                              <!--  </a>-->
 	                                <div class="submenuba animated fadeIn">
 	                                	<?php //print_r($hd);
 	                                		if ($hd){
 	                                	?>
-	                                	<a href="<?php echo $hd; //echo $srchd; ?>" target="blank">HD</a><br />
+	                                	<a href="<?php echo $hd; //echo $srchd; ?>" target="blank">MP4</a><br />
 	                                	<?php 		} // endif $hd
 	                                	 
 	                                	if ($dcp){
@@ -1132,20 +1143,20 @@ if (( $video ) || ( $images )) {
 
                              <?php if( $affiche /*get_field('affiche_hd')*/ ){?>
 							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $affiche; //the_field('affiche_hd'); ?>" alt="" download><button class="download">AFFICHE HD</button></a>
+								 <a href="<?php echo $affiche; //the_field('affiche_hd'); ?>" alt="" download><button class="download">PÓSTER HD</button></a>
 							</div>
                             <?php } ?>
 
                              <?php if( $dp ){?>
 							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $dp; ?>" alt="" download><button class="download">DOSSIER DE PRESSE</button></a>
+								 <a href="<?php echo $dp; ?>" alt="" download><button class="download">DOSSIER DE PRENSA</button></a>
 							</div>
                             <?php } ?>  
                             
 
                              <?php if( $revue ){?>
 							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $revue; ?>" alt="" download><button class="download">REVUE DE PRESSE</button></a>
+								 <a href="<?php echo $revue; ?>" alt="" download><button class="download">CLIPPING DE PRENSA</button></a>
 							</div>
                             <?php } ?>  
                             
@@ -1154,7 +1165,7 @@ if (( $video ) || ( $images )) {
                              <?php if( $photos ){?>
 
 								<div class="col-6 col-md-4 col-lg-12">
-									 <a href="<?php echo $photos; ?>" alt="" download><button class="download">PHOTOS HD</button></a>
+									 <a href="<?php echo $photos; ?>" alt="" download><button class="download">FOTOGRAMAS HD</button></a>
 								</div>
 
 							<!--<div class="col-6 col-md-4 col-lg-12">
@@ -1177,7 +1188,7 @@ if (( $video ) || ( $images )) {
                              <?php //if( have_rows('photos_hd') ): ?>
 							<div class="col-6 col-md-4 col-lg-12">
 								<!-- <a href="#" alt="">-->
-								 	<button class="download opensubmenuextraits">EXTRAITS</button>
+								 	<button class="download opensubmenuextraits">EXTRACTOS</button>
 								<!-- </a>-->
 							
 									<div class="submenuextraits animated fadeIn">
@@ -1320,220 +1331,7 @@ $cross_sells = array_filter( array_map( 'wc_get_product',$product->get_cross_sel
 					</div>
 
 
-<?php } else { //Livres ?>
-
-
-					<div class="col-lg-3 order-lg-2 order-md-1 order-sm-2 colbuttons "> <!-- col-xl-2 -->
-						
-      <?php 
-		                                    $telechargements = get_field('telechargements');	
-		                                   // print_r($telechargements);
-		                                   if ($telechargements){
-		                            ?>
-
-
-						<div class="row">
-
-							<?php 
-
-
-							$couverture = $telechargements['couverture_hd']; 
-							$sommaire = $telechargements['sommaire']; 
-							$extraits = $telechargements['extraits']; 
-							$revues = $telechargements['revue_de_presse']; 
-							$touslesdocuments = $telechargements['tous_les_documents']; 
-							//print_r($ba);
-							//$ba 
-							//$hd = $ba['hd']; 
-							//print_r($hd);
-							//$dcp = $ba['dcp'];
-							
-
-
-							?>
-
-
-
-                            <?php if( $couverture ){?>
-							<div class="col-6 col-md-4 col-lg-12">
-                                <a href="<?php echo $couverture ?>" alt="" download><button class="download">COUVERTURE HD</button></a>
-							</div>
-                            <?php } ?>
-
-
-                             <?php if( $sommaire /*get_field('sommaire')*/ ){?>
-							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $sommaire; /*the_field('sommaire');*/ ?>" alt="" download><button class="download">SOMMAIRE</button></a>
-							</div>
-                            <?php } ?>
-
-
-                             <?php if( $extraits ){?>
-                             <?php //if( have_rows('photos_hd') ): ?>
-							<div class="col-6 col-md-4 col-lg-12">
-								<!-- <a href="#" alt="">-->
-								 	<button class="download opensubmenuextraits">EXTRAITS</button>
-								<!-- </a>-->
-							
-									<div class="submenuextraits animated fadeIn">
-
-		  									 <?php 
-		  									 //print_r($photos);
-		  									foreach ($extraits as $extrait) {
-		  									 	$nom = $extrait['nom_de_lextrait'];
-		                                        $url = $extrait['fichier'];
-		  									
-		  									// while( have_rows('photos_hd') ): the_row();
-
-		                                   //     $nom= get_sub_field('nom_de_la_photo');
-		                                    //    $url= get_sub_field('fichier');
-		                                        ?>
-		                                        <a href="<?php echo $url; ?>" download><?php echo $nom; ?></a><br />
-
-		                                    
-		                                <?php //endwhile; 
-			                                	 }
-										?>
-			                        </div>
-			                </div>
-                            <?php } ?>
-
-                             <?php if( $revues ){?>
-                             <?php //if( have_rows('photos_hd') ): ?>
-							<div class="col-6 col-md-4 col-lg-12">
-								<!-- <a href="#" alt="">-->
-								 	<button class="download opensubmenuphotos">REVUE DE PRESSE</button>
-								<!-- </a>-->
-							
-									<div class="submenuphotos animated fadeIn">
-
-		  									 <?php 
-		  									 //print_r($photos);
-		  									foreach ($revues as $revue) {
-		  									 	$nom = $revue['nom_de_la_photo'];
-		                                        $url = $revue['fichier'];
-		  									
-		  									// while( have_rows('photos_hd') ): the_row();
-
-		                                   //     $nom= get_sub_field('nom_de_la_photo');
-		                                    //    $url= get_sub_field('fichier');
-		                                        ?>
-		                                        <a href="<?php echo $url; ?>" download><?php echo $nom; ?></a><br />
-
-		                                    
-		                                <?php //endwhile; 
-			                                	 }
-										?>
-			                        </div>
-			                </div>
-                            <?php } ?>
-
-
-                            <?php if( $touslesdocuments ){?>
-							<div class="col-6 col-md-4 col-lg-12">
-								 <a href="<?php echo $touslesdocuments; ?>" alt="" download><button class="downloadall">TOUS LES DOCUMENTS</button></a>
-							</div>
-                            <?php } ?>
-
-
-
-
-                            							<div class="col-6 col-md-4 col-lg-12">
-						   		<div class="crosssells">
-								<h3 class="widget-title">Vous aimeriez aussi</h3>
-									<?php
-									//dynamic_sidebar( 'right-sidebar' );
-
-
-//$id =  $post_object->ID;
-//$product = wc_get_product($id);
-$product = wc_get_product();
-$cross_sells = array_filter( array_map( 'wc_get_product',$product->get_cross_sell_ids() ), 'wc_products_array_filter_visible' );
-
-//$cross_sells =  $product->get_cross_sell_ids();
-
-//print_r($cross_sells);
-
-//$cross_sells = array_filter( array_map( 'wc_get_product',$product->get_cross_sell_ids() ), 'wc_products_array_filter_visible' );
-//$cross_sells = array_filter( array_map( 'wc_get_product', WC()->get_cross_sells() ), 'wc_products_array_filter_visible' );
-
-									//woocommerce_product_loop_start();
-           							 foreach ( $cross_sells as $cross_sell ) :
-										$post_object = get_post( $cross_sell->get_id() );
-										setup_postdata( $GLOBALS['post'] =& $post_object );
-										//print_r($cross_sell);
-										//echo $cross_sell['name'];
-
-										//$product = wc_get_product($id);
-    echo '<div class="container-fluid"><div class="row"><div class="col-4" style="padding:5px;">';
-      
-                ?>
-                <a href="<?php echo get_permalink(); ?>" alt="<?php the_title(); ?>">
-											<?php if( get_field('affiche_du_film') ) : ?>
-                                  				<img src="<?php the_field('affiche_du_film'); ?>" alt="<?php the_title(); ?>">
-                                			<?php else : // image par défaut ?>
-                                    			<img src="<?php bloginfo('stylesheet_directory');?>/img/film4.png" alt="<?php the_title(); ?>">
-                                			<?php endif; ?>
-										</a>
-				<?php						
-                echo '</div><div class="col-8" style="padding:5px; text-align: left;">';
-                   ?>
-                 <a href="<?php echo get_permalink(); ?>" alt="<?php the_title(); ?>">
-                    <?php
-                    echo '<h4>'; the_title(); echo '</h4>';
-                    ?>
-                </a>
-                <?php
-                echo '<h5> de ' . get_field('auteur') . '</h5>';
-       
-                $date = get_field('date_de_sortie'); 
-                            $timestamp = strtotime($date);
-                            
-                            $dateformatannee = "Y";
-                            $dateformatmois = "F";
-                            $dateformatjour = "d";
-                            $annee = date_i18n($dateformatannee, $timestamp);
-                            $jour =  date_i18n($dateformatjour, $timestamp);
-                            $mois =  date_i18n($dateformatmois, $timestamp);
-    
-                echo '</div></div></div>';
-
-            endforeach;
-       // woocommerce_product_loop_end();
-
-
-
-
-									// >> cf plugin widget capricci "vous aimeriez aussi"
-
-/*	
-
-											$args = array(
-												'posts_per_page' => 6,
-												'columns'        => 2,
-												'orderby'        => 'rand', 
-												'order'          => 'desc',
-											);
-										woocommerce_output_related_products($args);*/
-									//$product->get_id()
-
-// appeler woocommerce_output_related_products(); et modifier template single-product/related.php
-
-	
-
-
-										?>
-								</div>
-							</div>
-
-						</div>
-
-
-	<?php } // endif $telechargements ?>
-
-					</div>
-
- <?php } //livres ?>
+<?php } ?>
 					
 				</div>
 				
