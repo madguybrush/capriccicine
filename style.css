@@ -121,12 +121,22 @@ html, body{
 	font-size: 100%; 
 	font-weight: 400;
 	color: white;
-    background-color: #F0F0EF;
+	 background-color: #F8F8F8;
+    /*background-color: #F0F0EF;*/
+
+
 	/*overflow: auto;*/
 	/*background-color: rgba(239, 149, 5, 0.2);*/
 }
 
+.site{
+	height: 100%;
+}
 
+
+img{
+	max-width: 100%;
+}
 .pagination{
 	justify-content: center;
 }
@@ -2325,10 +2335,12 @@ padding-right: .4rem;
 	
 
 footer{
+		background-color: #030310;
+		/*margin-top: 2rem;*/
 		margin-left: 17%;
 		padding-left: 10%;
 		padding-right: 10%;
-		background-color: #F0F0EF;
+		/*background-color: #F0F0EF;*/
 		width: 83%;
 		/*position: absolute;
 		bottom: 0;*/
@@ -2337,12 +2349,25 @@ footer{
 		font-size: 0.6rem;
 		letter-spacing: .12rem;
 		font-family: Montserrat;
-		text-align: left;
+		text-align: center;
 		font-weight: 200;
-		padding-top: 1.5rem;
+		padding-top: 1rem;
 		padding-bottom: 1.5rem;
 
 		
+	}
+
+	footer .newslettertitle{
+		text-transform: uppercase;
+		padding-bottom: 1rem;
+	}
+
+	footer .form-control{
+		width:50%;
+	}
+
+	footer .flex-container{
+		justify-content: center;
 	}
 	
  footer a{
@@ -2357,7 +2382,8 @@ footer{
 	
 		footer a:hover{
 		text-decoration: none;
-		color : #000;
+		color : #FFF;
+		/*color : #000;*/
 	}
 	
 	/*@media only screen and (max-width:767.98px){*/

@@ -23,32 +23,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="container-fluid content qui">
 		<div class="row">
 			<div class="col-lg-6 offset-lg-1"> <!-- col-md-10 offset-md-1-->
-				<!--<div class="resume">
-				
+				<div class="resume">
+				<img src="<?php bloginfo('stylesheet_directory');?>/img/trait-debut-paragraphe.svg" alt="" class="trait">
 					<?php echo get_field('presentation'); ?>
-				</div>-->
-			
-			<?php 
-			$blocs = get_field('blocs');
-			if( $blocs ){?>
-			<?php	foreach ($blocs as $bloc) {
-		  				$titre = $bloc['titre'];
-		                $texte = $bloc['texte'];
-?>
+				</div>
 
-
-<h3><img src="<?php bloginfo('stylesheet_directory');?>/img/trait-debut-paragraphe.svg" alt="" class="trait"> 
-	<?php echo $titre; ?></h3>
-      <?php echo $texte; 	?>	            
-
-<?php
-
-		            }
+				<?php if (get_field('direction')){ ?>
+					<h3></h3>
+					<?php echo get_field('direction'); ?>
+				<?php } ?>
 
 
 
-		         }
-		     ?>
+				<?php if (get_field('production')){ ?>
+					<h3>PRODUCTION</h3>
+					<?php echo get_field('production'); ?>
+				<?php } ?>
+
+				<?php if (get_field('distribution')){ ?>
+					<h3>DISTRIBUTION</h3>		
+					<?php echo get_field('distribution'); ?>
+				<?php } ?>
+
+				<?php if (get_field('edition')){ ?>
+					<h3>EDITION</h3>
+					<?php echo get_field('edition'); ?>
+				<?php } ?>
+
+				<?php if (get_field('technique')){ ?>
+					<h3>PÔLE TECHNIQUE</h3>
+					<?php echo get_field('technique'); ?>
+				<?php } ?>
+
+				<?php if (get_field('administration')){ ?>
+					<h3>ADMINISTRATION</h3>
+					<?php echo get_field('administration'); ?>
+				<?php } ?>
+
+				<?php if (get_field('partenaires')){ ?>
+					<h3>LES SOCIÉTÉS DU GROUPE</h3>
+					<?php echo get_field('partenaires'); ?>
+				<?php } ?>
 				
 			</div>
 			<div class="col-lg-4 offset-lg-1 newslettertitle"> <!-- col-lg-3 offset-lg-1 -->

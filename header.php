@@ -277,7 +277,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</button>
 						</form>
 					
-					</div>
+				
+<?php
+
+
+if(isset($_GET["email"])) { $email = $_GET["email"]; }
+//echo $email;
+
+?>
+
+
+				<div>
+					<?php if (isset($_GET["email"])){ echo $email . ' va être abonné à la newsletter Capricci !'; } ?>
+				</div>
+			</div>
 				
 				
 				</div>

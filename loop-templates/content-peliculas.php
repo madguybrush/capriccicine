@@ -145,7 +145,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						$vod = $btns['btn_vod']; 
 						$cartelera = $btns['btn_cartelera']; 
 						$dvd = $btns['btn_dvd']; 
-					}
+					
 
 					if ($vod) { ?>
 						 <a href="<?php echo $vod; ?>" target="_blank" class="" title="Ver en VOD">
@@ -163,7 +163,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 						 <a href="<?php echo $dvd; ?>" target="_blank" class="" title="dvd">
 						 	<button class="cta ctapopup">EN DVD</button>
 						 </a>
-					 <?php } ?>
+					 <?php } 
+
+					}?>
 
 				</div>
 

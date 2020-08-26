@@ -79,19 +79,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php } ?>
 
 
+
+
+
                                  
 	<?php
-	$video = get_field('video_page_produit');
-	$images = get_field('galerie');
-	if (( $video ) || ( $images )) {
+	
+	//$images = get_field('galerie');
+	//if (( $video ) || ( $images )) {
 
 	?>
 
-							<div class="col-lg-12 cadreblanc">
+							<div class="col-lg-12 cadreblanc" style="background-color: #F8F8F8">
                                  <?php 
-                                    $video = get_field('video_page_produit');
+                                    $video = get_field('bande_annonce');
                                     if( $video ) { ?>
-								<div class="video-responsive">
+								<div class="video-responsive"  style="background-color: #F8F8F8">
 									<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/xc446vOqXm8" frameborder="0" allowfullscreen ></iframe>		-->
 									<iframe width="640" height="564" src="<?php echo $video; ?>" frameborder="0" controls allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>									
 								</div>
@@ -159,7 +162,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 							</div> <!-- cadreblanc -->
 
-<?php } // endif video image?>
+<?php //} // endif video image?>
 							
 						</div> <!-- row --> 
 						
@@ -168,8 +171,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 
 
-					<div class="col-lg-3 order-lg-2 order-md-1 order-sm-2 colbuttons "> <!-- col-xl-2 -->
+					<div class="col-lg-3 order-lg-2 order-md-1 order-sm-2 newslettertitle colbuttons "> <!-- col-xl-2 -->
 						
+
+		<!--	<div class="col-lg-4 offset-lg-1 newslettertitle">  col-lg-3 offset-lg-1 -->
+				Recibe nuestra newsletter con nuestras novedades
+				<form class="flex-container" role="search" method="get" action=""> 
+					<input class="form-control" type="search" placeholder="Vuestra dirección de e-mail" name="email" aria-label="Search">  
+						<button class="btn btnsearch" type="submit" id="newslettersubmit">  
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129" class="newsletterbutton">
+							<path class="fleche" d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" >
+							</path>
+							</svg>
+						</button>
+				</form>
+
+<?php
+
+
+if(isset($_GET["email"])) { $email = $_GET["email"]; }
+//echo $email;
+
+?>
+
+
+				<div>
+					<?php if (isset($_GET["email"])){ echo $email . ' va être abonné à la newsletter Capricci !'; } ?>
+				</div>
+			
+
+
+			<!--</div>-->
+
+
+
+
+
 
 
 								      <?php 

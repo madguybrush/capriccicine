@@ -107,7 +107,7 @@ $taxslug = $taxonomie->slug;
 
 
                     $args = array( 
-                                'posts_per_page' => 2, // -1
+                                'posts_per_page' => 6, // -1
                                 //'max_num_pages' => 3,
                                 'post_type'    => 'post', 
                                 'category_name' => 'noticias'
