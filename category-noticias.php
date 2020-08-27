@@ -163,7 +163,8 @@ $wp_query   = $ProjetsQuery;
                                                 }*/
 
 
-                                                $ProduitsArray[$x]['datepub'] = get_the_date();
+                                                $ProduitsArray[$x]['datepub'] = get_the_date('d/m/Y');
+                                                //the_date('d/m/Y');
 
                                                   //$ProduitsArray[$x]['affiche'] =  get_field('affiche_du_film');
                                                  $ProduitsArray[$x]['affiche'] = get_the_post_thumbnail_url();
@@ -201,7 +202,7 @@ $wp_query   = $ProjetsQuery;
 
 
 
-            <div class="col-12 colimg">
+            <div class="col-12 colimg colimg<?php if ($ProduitsArray[$x]['cartelera']) { echo 'cartelera'; } ?>">
               <a href="<?php echo $ProduitsArray[$x]['lien']; ?>" alt="<?php echo $ProduitsArray[$x]['titre']; ?>">
                     <?php if( $ProduitsArray[$x]['affiche'] ): ?>
                             <img src="<?php echo $ProduitsArray[$x]['affiche'] ?>" alt="<?php echo $ProduitsArray[$x]['titre']; ?>">

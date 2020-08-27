@@ -62,21 +62,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="col-lg-9 order-lg-1 order-md-2 order-sm-1"> <!-- col-xl-10 -->
 					
-						<div class="row">
+						<div class="row" style="background-color: white;">
 					
+							<?php 
+							//$post_date = get_the_date(d-m-Y); //D/M/j
+							//echo $post_date;
+							//$date = get_the_date(); 
+							//$timestamp = strtotime($date);
+	                           //echo $timestamp;
+	                         /*   $dateformatannee = "Y";
+	                            $dateformatmois = "m";
+	                            $dateformatjour = "d";
+	                            $annee = date_i18n($dateformatannee, $timestamp);
+	                            $jour =  date_i18n($dateformatjour, $timestamp);
+	                            $mois =  date_i18n($dateformatmois, $timestamp);
 
+	                            $dateformat = $jour. '/' . $mois . '/' . $annee; 
+
+	                            $dateok = date("m.d.y", $timestamp);*/
+
+
+							//$today = strtotime(date("d-m-Y"));
+							?>
 						
-						
-						<?php if (get_field('texte')){ ?>
 							<div class="col-lg-12 resume noticias <?php if (get_field('cartelera')){ echo "cartelera";} ?>">
 								<!--<img src="--><?php //bloginfo('stylesheet_directory');?><!--/img/trait-debut-paragraphe.svg" alt="" class="trait">-->
-								<?php //echo get_field('synopsis', false, false);  // enleve le p qui wrap le texte, et tous les p d'ailleurs
+								<div class="date"><?php  the_date( 'd/m/Y' ); //echo $dateok; echo $dateformat; ?></div>
+						<?php if (get_field('texte')){ ?>		
+						<?php //echo get_field('synopsis', false, false);  // enleve le p qui wrap le texte, et tous les p d'ailleurs
 									the_field('texte');
 								?>
-					
+					<?php } ?>
 								
 							</div>
-						<?php } ?>
+						
 
 
 

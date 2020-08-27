@@ -40,9 +40,9 @@ get_header();
 
 
 		<!-- Do the right sidebar check -->
-		<?php if ( !is_cart() && !is_front_page()) : ?>
+		<?php //if ( !is_cart() && !is_front_page()) : ?>
             <?php //get_template_part( 'global-templates/right-sidebar-check' ); ?>
-<?php endif; ?>
+<?php //endif; ?>
             
 
 

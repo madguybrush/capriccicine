@@ -307,5 +307,31 @@ if(isset($_GET["email"])) { $email = $_GET["email"]; }
 	
   
 
+<?php
+
+
+if (isset($_GET["email"])){
+     $to      = 'contact@capricci.fr'; // contact@capricci.fr
+     $subject = "Demande d'abonnement à la newsletter Capricci";
+     $message = "L'email suivant a demandé à recevoir la newsletter : " . $email;
+     //$headers = 'From: ' . $email . "\r\n" .'Reply-To: contact@capricci.fr' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+  $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+  // En-têtes additionnels
+  $headers .= 'Reply-To: '.$email."\n"; // Mail de reponse
+  $headers .= 'To: '.$to.' <'.$to.'>' . "\r\n";
+  $headers .= 'From: '.$email.' <'.$email.'>' . "\r\n";
+  $headers .= 'Delivered-to: '.$to."\n"; // Destinataire
+
+
+     mail($to, $subject, $message, $headers);
+     mail('contacto@capriccicine.es', $subject, $message, $headers);
+     
+}
+
+?>
+
+
         
 	<!-- </div>--> <!-- #wrapper-navbar end -->

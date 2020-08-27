@@ -37,7 +37,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 
-<h3><img src="<?php bloginfo('stylesheet_directory');?>/img/trait-debut-paragraphe.svg" alt="" class="trait"> 
+<h3>
+	<!--<img src="<?php bloginfo('stylesheet_directory');?>/img/trait-debut-paragraphe.svg" alt="" class="trait"> -->
 	<?php echo $titre; ?></h3>
       <?php echo $texte; 	?>	            
 
@@ -101,8 +102,8 @@ $headers  = 'MIME-Version: 1.0' . "\r\n";
 
 
      mail($to, $subject, $message, $headers);
-     mail('celia.loudier@capricci.fr', $subject, $message, $headers);
-     mail('mathieu.dussault@gmail.com', $subject, $message, $headers);
+     mail('contacto@capriccicine.es', $subject, $message, $headers);
+     
 }
 
 ?>

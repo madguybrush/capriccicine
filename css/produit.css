@@ -992,15 +992,34 @@ width: 35px;
 		font-family: Montserrat, Arial;
 		font-size: 1.2rem;
 		color: #030310;
+		font-weight: bold;
 		text-transform: uppercase;
+	}
+
+#produit .date{
+		font-family: Montserrat, Arial;
+		font-size: .6rem;
+		color: #919191;
+		margin-bottom: 1rem;
 	}
 
 #produit .infoscontent a{
 		color: #A78A3C;
 		/*font-size: 1rem;*/
 		text-decoration: underline;
-	}
 
+	}
+#produit .infoscontent a:hover{
+		color: rgb(3, 3, 16, .5); /*#A78A3C;*/
+		/*font-size: 1rem;*/
+		text-decoration: underline;
+
+	}
+	/*#produit .infoscontent a:visited{
+		color: rgb(3, 3, 16, .5); 
+		text-decoration: underline;
+
+	}*/
 
 
 a.prev, a.next{
@@ -1011,6 +1030,7 @@ a.prev, a.next{
 	color: #A78A3C;
 	padding-top: 2rem;
 	letter-spacing: .15rem;
+	text-decoration: none!important;
 }
 
 

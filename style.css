@@ -452,7 +452,8 @@ width: 35px;
 }
 
 .fondnoir{
-	background-color: rgba(0, 0, 0, 1)!important;
+	/*background-color: rgba(0, 0, 0, 1)!important;*/
+	background-color: #030310;
 }
 	
 
@@ -2337,12 +2338,14 @@ padding-right: .4rem;
 	
 
 footer{
-		background-color: #030310;
+		background-color: #FFF;
+		/*background-color: #F0F0EF;*/
+		/*background-color: #030310;*/
 		/*margin-top: 2rem;*/
 		margin-left: 17%;
 		padding-left: 10%;
 		padding-right: 10%;
-		/*background-color: #F0F0EF;*/
+		
 		width: 83%;
 		/*position: absolute;
 		bottom: 0;*/
@@ -2384,8 +2387,8 @@ footer{
 	
 		footer a:hover{
 		text-decoration: none;
-		color : #FFF;
-		/*color : #000;*/
+		/*color : #FFF;*/
+		color : #000;
 	}
 	
 	/*@media only screen and (max-width:767.98px){*/

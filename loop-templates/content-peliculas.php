@@ -276,10 +276,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<?php $visa = get_field('visa');	
                                     if ($visa){?>
-							<tr > <!-- class="titre" -->
+							<!--<tr > 
 								<td class="colLeft"><b>Visa</b></td>
 								<td class="colRight"><?php echo get_field('visa'); ?></td>
-							</tr>
+							</tr>-->
                             <?php } ?>
 
 
@@ -664,7 +664,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<?php if (get_field('lauteur')){ ?>
 							<div class="col-lg-12 lauteur">
-								<h3>L’AUTEUR </h3>
+								<h3>CINEASTA </h3>
 								<img src="<?php bloginfo('stylesheet_directory');?>/img/trait-debut-paragraphe.svg" alt="" class="trait">
                                 <?php echo get_field('lauteur', false, false);  ?>
 
@@ -782,6 +782,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 							$revue = $telechargements['revue_de_presse']; 
 							$photos = $telechargements['photos_hd']; 
 							$extraits = $telechargements['extraits']; 
+							$guia = $telechargements['guia']; 
+							$calification = $telechargements['calification']; 
 							$touslesdocuments = $telechargements['tous_les_documents']; 
 							//print_r($ba);
 							//$ba 
@@ -830,6 +832,8 @@ CALIFICACIÓN POR EDADES
 								 <a href="<?php echo $affiche; //the_field('affiche_hd'); ?>" alt="" download><button class="download">PÓSTER HD</button></a>
 							</div>
                             <?php } ?>
+
+                          
 
                              <?php if( $dp ){?>
 							<div class="col-6 col-md-4 col-lg-12">
@@ -900,7 +904,17 @@ CALIFICACIÓN POR EDADES
                             <?php } ?>
 
 
+                            	   <?php if( $guia /*get_field('affiche_hd')*/ ){?>
+							<div class="col-6 col-md-4 col-lg-12">
+								 <a href="<?php echo $guia; //the_field('affiche_hd'); ?>" alt="" download><button class="download">GUÍA DE DISTRIBUCIÓN</button></a>
+							</div>
+                            <?php } ?>
 
+                             <?php if( $calification /*get_field('affiche_hd')*/ ){?>
+							<div class="col-6 col-md-4 col-lg-12">
+								 <a href="<?php echo $calification; //the_field('affiche_hd'); ?>" alt="" download><button class="download">CALIFICACIÓN POR EDADES</button></a>
+							</div>
+                            <?php } ?>
 
 
                             <?php if( $touslesdocuments ){?>

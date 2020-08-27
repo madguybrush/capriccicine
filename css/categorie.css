@@ -201,7 +201,7 @@ width: 2%;
  
 }
 .colimg{
-	   	  	background-image: url("lignecategorie.svg");
+	   	  	background-image: url("lignecategorienoire.svg");
       background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 0 9px;
@@ -211,8 +211,14 @@ width: 2%;
     -ms-transition: all .4s ease-out;
     -o-transition: all .4s ease-out;
     transition: all .4s ease-out;
-
 }
+
+.colimgcartelera{
+		background-image: url("lignecategorie.svg");
+		 
+}
+
+
 /*
 .colimg:hover{
 	background-size: 100% 9px;
