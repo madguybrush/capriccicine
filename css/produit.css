@@ -209,6 +209,8 @@ color : white;
 			/*padding-bottom: 4rem;*/
 	}
 
+
+
 /*
   .variations_form{
                 text-align: center;
@@ -947,16 +949,15 @@ margin-bottom: .5rem;
 			/****************noticias*************/
 	/*cf agenda.css*/
 	
- .noticias h3 {
+ /*.noticias h3 {
 	font-size: 1.1rem;
-	/*color: #A78A3C;*/
 	font-weight: bold;
 	font-family: Montserrat, verdana;
 	padding-top: 2rem;
 	padding-bottom: 1rem;
 	letter-spacing: .2rem;
 	text-transform: uppercase;
-}
+}*/
 
 .cartelera h3 {
 	color: #A78A3C;
@@ -964,12 +965,64 @@ margin-bottom: .5rem;
 }
 
  .noticias p{
-	font-size: .8rem;
+	font-size: .9rem;
 	letter-spacing: .05rem;
 	color: #030310;
 	font-family: 'Montserrat', serif;
+	font-weight: 400;
 /*	font-family: 'Lora', serif;*/
 }
+
+.noticias p:first-child::before{
+content: none!important;
+    padding: 3px;
+/*
+width: 35px;
+    height: 3px;*/
+}
+
+#produit .infoscontent h2{
+		font-family: Montserrat, Arial;
+		font-size: 2rem;
+		font-weight: bold;
+		color: #A78A3C;
+	}
+
+#produit .infoscontent h3{
+		font-family: Montserrat, Arial;
+		font-size: 1.2rem;
+		color: #030310;
+		text-transform: uppercase;
+	}
+
+#produit .infoscontent a{
+		color: #A78A3C;
+		/*font-size: 1rem;*/
+		text-decoration: underline;
+	}
+
+
+
+a.prev, a.next{
+	font-family: Montserrat, verdana;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	font-weight: bold;
+	color: #A78A3C;
+	padding-top: 2rem;
+	letter-spacing: .15rem;
+}
+
+
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+
+
 
 
 #produit .newslettertitle{

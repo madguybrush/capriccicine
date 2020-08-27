@@ -165,8 +165,8 @@ opacity: .5;
 
 .gridnoticias .grid-item { /* .grid-sizer, */
 width: 48%; /*25*/ /* 16 pour 5 */
-  margin-bottom: 2%;
-   margin-top: 2%;
+  margin-bottom: 0; /*2%;*/
+   margin-top: 1rem; /*2%;*/
    }
 	
 	.grid-item { /* .grid-sizer, */
