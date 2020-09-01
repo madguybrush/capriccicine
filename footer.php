@@ -27,7 +27,7 @@ if (!is_front_page()){
 
 
 			<!--conception graphique : <a href="http://marclafon-design.fr/" target="_blank">Marc Lafon</a> — développement : <a href="http://madmind.fr/" target="_blank">Mad Mind</a> — tous droits réservés-->
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>/politica/" alt="Política de privacidad">Política de privacidad</a>
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>politica/" alt="Política de privacidad">Política de privacidad</a>
     
   <!--  
 <div class="container-fluid">

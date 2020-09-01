@@ -49,10 +49,12 @@ get_header();
     //$args = array( 'post_type' => 'product',  'meta_query' => array('key' => '_featured','value' => 'yes') );
     
 
+ // Reset postdata
+//wp_reset_postdata();
 
  $args = array( 
-    'posts_per_page' => 8,
     'post_type'    => 'post', 
+    'posts_per_page' => 5,
     'post__in' => get_option('sticky_posts') 
 ); 
 
@@ -68,17 +70,17 @@ get_header();
                 ),
             );*/
     
-    
-    $ProjetsQuery = new WP_Query($args ); 
+    $i=0;
+    $ProjetsQuery = new WP_Query($args); 
     // , 'meta_key' => '_featured', 'meta_value' => 'yes'         is_featured( ) sticky_posts?>
             <?php if ( $ProjetsQuery->have_posts() ) : ?>
-                <?php while ( $ProjetsQuery->have_posts() ) : ?>
+                <?php while (( $ProjetsQuery->have_posts() )&& $i<5) : ?>
                     <?php $ProjetsQuery->the_post(); ?>
     
 	<div class="section" id="section" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
 		
         
-        <?php 
+        <?php //print_r($ProjetsQuery);
         
                   //  $attachment_id = get_field('jaquette_du_dvd__prix_recus_page_daccueil');
                      //  $attachment_id =   get_post_meta($post->ID, "wccaf_jaquette_dvd_homepage", true);
@@ -318,11 +320,12 @@ get_header();
 
 	
 
-	  <?php endwhile; ?>
+	  <?php $i++; 
+      endwhile; ?>
     
     <?php else : ?>
 
-coucou
+
 
     
    <?php endif; ?>

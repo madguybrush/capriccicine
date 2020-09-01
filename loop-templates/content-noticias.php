@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="row infosheader animated fadeInUp">
 
-            <div class="col-12 padding2">
+            <div class="col-12 padding2" style="padding-left: 6rem; ">
                 <h1 class="animated fadeInUp"><?php the_title(); ?></h1>
  
                         <?php if( get_field('sous_titre') ): ?>
@@ -116,6 +116,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 <div class="col-lg-12 cadreblanc" style="background-color: #F8F8F8">
 									<div class="video-responsive"  style="background-color: #F8F8F8">
 										<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/xc446vOqXm8" frameborder="0" allowfullscreen ></iframe>		-->
+										<!-- https://player.vimeo.com/video/314293565 -->
 										<iframe width="640" height="564" src="<?php echo $video; ?>" frameborder="0" controls allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>									
 									</div>
                                 </div> <!-- cadreblanc -->
@@ -181,11 +182,16 @@ if ( ! empty( $categories ) ) {
 		            News précédente
 		            
 		        
-		        </a><?php } ?> 
+		        </a><?php } ?>
 		    </div>
 
-		    <div class="col-6">
-		    	
+		    <div class="col-6 text-center">
+		    	<div class="compartir">COMPARTIR EN:</div>
+		    	<!--<div class="fb-share-button" data-href="<?php home_url( add_query_arg( array(), $wp->request )); ?>" data-layout="button_count"></div>-->
+		    	<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">
+		    		<img src="<?php bloginfo('stylesheet_directory');?>/img/fbShare.png">
+		    	</a>
+		    	<a href="http://twitter.com/share?url=<?php echo get_permalink(); ?>&text=<?php the_title(); ?>" target="_blank"><img src="<?php bloginfo('stylesheet_directory');?>/img/TwitterShare.png"></a>
 		    </div>
 
 

@@ -1009,12 +1009,25 @@ width: 35px;
 		text-decoration: underline;
 
 	}
+
+
+
 #produit .infoscontent a:hover{
-		color: rgb(3, 3, 16, .5); /*#A78A3C;*/
+		color: rgb(3, 3, 16); /*#A78A3C;*/
+		opacity: 50%;
 		/*font-size: 1rem;*/
-		text-decoration: underline;
+		/*text-decoration: underline;*/
 
 	}
+
+	#produit .infoscontent a:visited{
+		color: rgb(2,2,8); /*#A78A3C;*/
+
+		/*color: rgba(3, 3, 16, 0.5);*/
+
+	}
+
+
 	/*#produit .infoscontent a:visited{
 		color: rgb(3, 3, 16, .5); 
 		text-decoration: underline;
@@ -1029,6 +1042,18 @@ a.prev, a.next{
 	font-weight: bold;
 	color: #A78A3C;
 	padding-top: 2rem;
+	letter-spacing: .15rem;
+	text-decoration: none!important;
+}
+
+.compartir{
+	font-family: Montserrat, verdana;
+	text-transform: uppercase;
+	font-size: 0.6rem;
+	font-weight: bold;
+	color: #A78A3C;
+	padding-bottom: .5rem;
+	/*padding-top: 2rem;*/
 	letter-spacing: .15rem;
 	text-decoration: none!important;
 }

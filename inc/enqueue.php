@@ -36,7 +36,7 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
         	wp_enqueue_style( 'capricci-produitCss', get_template_directory_uri() . '/css/produit.css',false,null,'all'); 
        }
        // if (is_product_tag()) { 
-       if (is_category()) {
+       if (is_category() || is_search()) {
         	wp_enqueue_style( 'capricci-categorieCss', get_template_directory_uri() . '/css/categorie.css',false,null,'all'); 
         }
        // if (is_product_category()) { 
